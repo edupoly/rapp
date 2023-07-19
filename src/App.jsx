@@ -2,27 +2,61 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react'
 function App() {
-  var [ar,setAr]= React.useState([10,47,54,22,45,98,43]);
-  var [t,setT] = React.useState(0);
-  function evens(){
-    setT(0)
+  var [ar,setAr]= React.useState([
+    {
+      fullname:'gauri shinde',
+      gender:'female'
+    },
+    {
+      fullname:'himaja',
+      gender:'female'
+    },
+    {
+      fullname:'prayag',
+      gender:'male'
+    },
+    {
+      fullname:'sruthi',
+      gender:'female'
+    },
+    {
+      fullname:'kiran',
+      gender:'male'
+    },
+    {
+      fullname:'balu',
+      gender:'male'
+    },
+  ]);
+  var [g,setG] = React.useState('male');
+  function males(){
+    setG("male")
   }
-  function odds(){
-    setT(1)
+  function females(){
+    setG("female")
   }
   return (
     <div>
-      <button onClick={evens}>Evens</button>
-      <button onClick={odds}>Odds</button>
-      <ul>
+      <button onClick={males} disabled={g==='male'?true:false}>Male</button>
+      <button onClick={females} disabled={g==='female'?true:false}>Female</button>
+      <table border="2">
         {
           ar.map((a)=>{
-            if(a%2===t){
-              return <li>{a}</li>
+            if(a.gender===g){
+              return (
+
+                <tr style={a.gender==='female'?{backgroundColor:'pink'}:{backgroundColor:"blue"}}>
+                  <td>{a.fullname}</td>
+                  <td>{a.gender}</td>
+                </tr>
+  
+              )
             }
+           
+            
           })
         }
-      </ul>
+      </table>
     </div>
   );
 }
