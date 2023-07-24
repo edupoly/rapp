@@ -1,5 +1,10 @@
-.mybox{
+.redbox{
     border:3px solid red;
+    padding:10px;
+    margin:10px;
+}
+.bluebox{
+    border:3px solid blue;
     padding:10px;
     margin:10px;
 }
