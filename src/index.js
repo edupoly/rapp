@@ -10,6 +10,8 @@ import {
 import AddCustomer from './features/customer/AddCustomer';
 import CustomerList from './features/customer/CustomerList';
 import Home from './features/pages/Home';
+import Login from './features/pages/Login';
+import AddProperty from './features/property/AddProperty';
   const router = createBrowserRouter([
     {
       path: "/",
@@ -26,6 +28,14 @@ import Home from './features/pages/Home';
         {
             path:"/customerList",
             element:<CustomerList></CustomerList>
+        },
+        {
+            path:"/login",
+            element:<Login></Login>
+        },
+        {
+            path:"/addProperty",
+            element:<AddProperty></AddProperty>
         }
       ]
     },

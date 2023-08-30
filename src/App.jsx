@@ -5,6 +5,7 @@ import Navbar from './features/navbar/Navbar';
 import { Outlet } from 'react-router-dom';
 
 function App() {
+  console.log(process.env.REACT_APP_MYNAME)
   return (
     <Provider store={store}>
       <div className='mybox'>
